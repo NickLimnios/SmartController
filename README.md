@@ -1,2 +1,2 @@
 # SmartController
-SmartController is a java web application, created for the purposes of JavaCodingSchool2018.
+SmartController is a  web-based  system  that collects  all  home  appliances  and  devices  that  can connect to the internet and be controlled remotely. Instead of each device having its own “companion app”, our platform will enable us to communicate and interact with a number of devices located in our home. As there will be various device types, each device will require a different UI to manage.
