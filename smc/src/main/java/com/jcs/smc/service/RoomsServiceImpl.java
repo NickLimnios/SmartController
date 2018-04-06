@@ -1,0 +1,31 @@
+package com.jcs.smc.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.jcs.smc.entity.Rooms;
+import com.jcs.smc.repository.RoomsRepository;
+
+@Service
+public class RoomsServiceImpl implements RoomsService{
+
+	@Autowired
+	private RoomsRepository roomsRepo;
+	
+	@Override
+	public List<Rooms> findAll() {
+		return roomsRepo.findAll();
+	}
+
+	@Override
+	public List<Rooms> findById(int id) {
+		return roomsRepo.findById(id);
+	}
+
+	@Override
+	public List<Rooms> findByCode(String code) {
+		return roomsRepo.findByCode(code);
+	}
+}
