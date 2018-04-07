@@ -28,4 +28,21 @@ public class RoomsServiceImpl implements RoomsService{
 	public List<Rooms> findByCode(String code) {
 		return roomsRepo.findByCode(code);
 	}
+
+	@Override
+	public Rooms save(Rooms room) {
+		return roomsRepo.save(room);
+	}
+
+	@Override
+	public void delete(int id) {
+		roomsRepo.deleteById(id);
+		
+	}
+
+	@Override
+	public void delete(Rooms room) {
+		roomsRepo.delete(room);
+		
+	}
 }

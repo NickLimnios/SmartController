@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	 <tr th:each="d : ${roles}">
+        <td th:text="${d.id}">1</td>
+        <td><a href="#" th:text="${d.code}">Title ...</a></td>
+        <td th:text="${d.name}">Text ...</td>
+    </tr>
+</body>
+</html>
