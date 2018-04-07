@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	 <tr th:each="d : ${rooms}">
+        <td th:text="${d.id}">1</td>
+        <td><a href="#" th:text="${d.name}">Title ...</a></td>
+        <td th:text="${d.description}">Text ...</td>
+    </tr>
+</body>
+</html>
