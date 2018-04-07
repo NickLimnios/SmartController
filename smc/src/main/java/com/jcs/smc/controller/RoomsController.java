@@ -9,16 +9,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.jcs.smc.service.RoomsService;
 
 @Controller
-@RequestMapping(path="/rooms")
 public class RoomsController {
 
 	@Autowired
-	private RoomsService roomsService;
+	private RoomsService roomsSrv;
 	
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/rooms", method = RequestMethod.GET)
 	public String rooms(Model model) {
-		
-		model.addAttribute("rooms", roomsService.findAll());
+		model.addAttribute("rooms", roomsSrv.findAll());
 		return "rooms";
 	}
 	
