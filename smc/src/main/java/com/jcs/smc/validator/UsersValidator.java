@@ -8,7 +8,7 @@ import org.springframework.validation.Validator;
 import com.jcs.smc.entity.Users;
 import com.jcs.smc.service.UsersService;
 
-public class UserValidator implements Validator{
+public class UsersValidator implements Validator{
 	 @Autowired
 	    private UsersService usersService;
 	    @Override
