@@ -39,17 +39,17 @@ public class AppController {
 	        }
 	        return "login";
 	    }
-	    @RequestMapping(value = "/registration", method = RequestMethod.GET)
+	    @RequestMapping(value = "/register", method = RequestMethod.GET)
 	    public String registration(Model model) {
 	        model.addAttribute("user", new Users());
-	        return "registration";
+	        return "register";
 	    }
-	    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+	    @RequestMapping(value = "/register", method = RequestMethod.POST)
 	    public String registration(@ModelAttribute("user") Users user, BindingResult bindingResult, Model model) {
 	        userValidator.validate(user, bindingResult);
 
 	        if (bindingResult.hasErrors()) {
-	            return "registration";
+	            return "register";
 	        }
 	        userService.save(user);
 	        return "redirect:/layout";
