@@ -34,14 +34,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
     	http.
     	authorizeRequests()
-    	.antMatchers("/", "/login", "/hello", "/registration").permitAll()
-		.antMatchers("/css/**", "/img/**", "/js/**", "/scss/**", "/vendor/**").permitAll()
+    	.antMatchers("/", "/login", "/register").permitAll()
+		.antMatchers("/css/**", "/img/**", "/js/**", "/scss/**", "/vendor/**", "/pug/**").permitAll()
 		.antMatchers("/admin/**").hasAuthority("ADMIN").anyRequest()
 		.authenticated()
 		.and()
 		.csrf().disable().formLogin()
 		.loginPage("/login").failureUrl("/login?error=true")
-		.defaultSuccessUrl("/home")
+		.defaultSuccessUrl("/index")
 		.usernameParameter("username")
 		.passwordParameter("password")
 		.and()
@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.logoutSuccessUrl("/")
 		.and()
 			.exceptionHandling()
-			.accessDeniedPage("/error/403");
+			.accessDeniedPage("/errors/403");
     }
 
 	@Autowired
