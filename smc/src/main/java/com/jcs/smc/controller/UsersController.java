@@ -17,8 +17,9 @@ public class UsersController {
 	@RequestMapping(value="users",method=RequestMethod.GET)
 	public String users(Model model)
 	{
+		model.addAttribute("content","users");
 		model.addAttribute("users",usersSrv.findAll());
-		return "users";
+		return "layout";
 	}
 
 }

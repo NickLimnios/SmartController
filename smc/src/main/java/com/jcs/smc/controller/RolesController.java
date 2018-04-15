@@ -17,8 +17,9 @@ public class RolesController {
 	@RequestMapping(value="roles",method=RequestMethod.GET)
 	public String roles(Model model)
 	{
+		model.addAttribute("content","roles");
 		model.addAttribute("roles",rolesSrv.findAll());
-		return "roles";
+		return "layout";
 	}
 
 }
