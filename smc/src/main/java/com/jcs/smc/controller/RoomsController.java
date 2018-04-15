@@ -14,10 +14,11 @@ public class RoomsController {
 	@Autowired
 	private RoomsService roomsSrv;
 	
-	@RequestMapping(value = "/rooms", method = RequestMethod.GET)
+	@RequestMapping(value = "rooms", method = RequestMethod.GET)
 	public String rooms(Model model) {
-		model.addAttribute("rooms", roomsSrv.findAll());
-		return "rooms";
+		model.addAttribute("content","rooms");
+		model.addAttribute("tables", roomsSrv.findAll());
+		return "layout";
 	}
 	
 }

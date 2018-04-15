@@ -7,9 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AppController {
 	
-	@RequestMapping(path="/")
+	@RequestMapping(path= {"/","index"})
 	public String index(Model model) {
-		return "index";
+		model.addAttribute("content", "index");
+		return "layout";
 	}
 
 }

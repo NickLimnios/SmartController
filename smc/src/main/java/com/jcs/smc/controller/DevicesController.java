@@ -17,8 +17,9 @@ public class DevicesController {
 	@RequestMapping(value="devices",method=RequestMethod.GET)
 	public String devices(Model model)
 	{
+		model.addAttribute("content","devices");
 		model.addAttribute("devices",devicesSrv.findAll());
-		return "devices";
+		return "layout";
 	}
 
 }
