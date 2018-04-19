@@ -21,5 +21,7 @@ public class UsersController {
 		model.addAttribute("users",usersSrv.findAll());
 		return "layout";
 	}
+	
+//Add methods for user crud
 
 }

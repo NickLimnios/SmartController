@@ -21,4 +21,6 @@ public class RoomsController {
 		return "layout";
 	}
 	
+	//add methods for rooms crud
+	
 }
