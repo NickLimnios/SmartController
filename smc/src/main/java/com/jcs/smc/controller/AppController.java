@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jcs.smc.entity.Users;
 import com.jcs.smc.service.UsersService;
-import com.jcs.smc.validator.UsersValidator;
+//import com.jcs.smc.validator.UserValidator;
 
 @Controller
 public class AppController {
 	
-    @Autowired
-    private UsersValidator userValidator;
+   /* @Autowired
+    private UserValidator userValidator;*/
 
     @Autowired
     private UsersService userService;
@@ -45,12 +45,11 @@ public class AppController {
 	        return "register";
 	    }
 	    @RequestMapping(value = "/register", method = RequestMethod.POST)
-	    public String registration(@ModelAttribute("user") Users user, BindingResult bindingResult, Model model) {
-	        userValidator.validate(user, bindingResult);
-
+	    public String registration(@ModelAttribute("users") Users user, BindingResult bindingResult, Model model) {
+	        /*userValidator.validate(user, bindingResult);
 	        if (bindingResult.hasErrors()) {
 	            return "register";
-	        }
+	        }*/
 	        userService.save(user);
 	        return "redirect:/layout";
 	    }
