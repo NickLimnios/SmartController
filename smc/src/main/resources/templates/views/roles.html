@@ -1,3 +1,30 @@
 <div th:fragment="roles">
-<p>This is the roles content</p>
+<div class="container-fluid">
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Roles Management</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Code</th>
+                  <th>Name</th>
+                </tr>
+              </thead>
+                <tbody>
+					<tr th:each="role : ${tables}">
+						<td th:text="${role.id}"><a href="#">ID</a></td>
+						<td th:text="${role.code}"><a href="#">CODE</a></td>
+						<td th:text="${role.name}"><a href="#">NAME</a></td>
+					</tr>
+				</tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
 </div>

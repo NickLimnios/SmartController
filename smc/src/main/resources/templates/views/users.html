@@ -1,3 +1,34 @@
 <div th:fragment="users">
-<p>This is the users content</p>
+<div class="container-fluid">
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> User Management</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Username</th>
+                  <th>Role</th>
+                </tr>
+              </thead>
+                <tbody>
+					<tr th:each="user : ${tables}">
+						<td th:text="${user.id}"><a href="#">ID</a></td>
+						<td th:text="${user.email}"><a href="#">EMAIL</a></td>
+						<td th:text="${user.firstname} + ${user.lastname}">NAME</td>
+						<td th:text="${user.username}"></td>
+						<td th:text="${user.role}"><a href="#">ROLE</a></td>
+					</tr>
+				</tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
 </div>

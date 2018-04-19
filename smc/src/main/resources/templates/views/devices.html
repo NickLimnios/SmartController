@@ -1,3 +1,35 @@
 <div th:fragment="devices">
-<p>This is the devices content</p>
+<div class="container-fluid">
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Device Management</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Code</th>
+                  <th>Name</th>
+                  <th>Information</th>
+                </tr>
+              </thead>
+                <tbody>
+					<tr th:each="device : ${tables}">
+						<td><img src="../../static/img/${device}.png"
+						th:attr="src=@{/img/champion_icons/${device}.png},title=${device},alt=${device}" /></td>
+						<td th:text="${device.id}"><a href="#">ID</a></td>
+						<td th:text="${device.code}"><a href="#">CODE</a></td>
+						<td th:text="${device.name}"><a href="#">NAME</a></td>
+						<td th:text="${device.information}"><a href="#">INFORMATION</a></td>
+						<td th:text="${device.status}"></td>
+					</tr>
+				</tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
 </div>
