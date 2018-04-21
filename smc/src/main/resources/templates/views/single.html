@@ -5,25 +5,33 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Rooms</li>
-        <li class="breadcrumb-item active">Singe Item</li>
+        <li class="breadcrumb-item active">Single Item</li>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
           <i></i>Single Item</div>
         <div class="card-body">
- 
-         	<div class="form-group">
-			  <label for="code">Code:</label>
-			  <input th:value="${single.code}" type="text" class="form-control" id="code">
-			</div>
-			<div class="form-group">
-			  <label for="description">Description:</label>
-			  <input th:value="${single.description}" type="text" class="form-control" id="description">
-			</div>
+			<form class="form-group" th:object="${single}" th:action="@{/submit}" method="post">
+				<div class="form-group">
+				  <label for="id">Id:</label>
+				  <input th:field="*{id}" type="number" class="form-control" id="id">
+				</div>
+	         	<div class="form-group">
+				  <label for="code">Code:</label>
+				  <input th:field="*{code}" type="text" class="form-control" id="code">
+				</div>
+				<div class="form-group">
+				  <label for="name">Name:</label>
+				  <input th:field="*{name}" type="text" class="form-control" id="name">
+				</div>
+				<div class="form-group">
+				  <label for="description">Description:</label>
+				  <input th:field="*{description}" type="text" class="form-control" id="description">
+				</div>
+				 <button  type="submit" class="btn btn-primary">Submit</button>
+        	</form>
         </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
       </div>
     </div>
 </div>
