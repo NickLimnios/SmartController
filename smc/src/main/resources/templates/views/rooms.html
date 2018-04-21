@@ -11,7 +11,7 @@
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i class="fa fa-table"></i> Data Table Example</div>
+          <i class="fa fa-table"></i> Data Table</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -21,6 +21,8 @@
                   <th>Code</th>
                   <th>Name</th>
                   <th>Description</th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tfoot>
@@ -29,20 +31,24 @@
                   <th>Code</th>
                   <th>Name</th>
                   <th>Description</th>
+                  <th></th>
+                  <th></th>
                 </tr>
               </tfoot>
                 <tbody>
 					<tr th:each="room : ${tables}">
-						<td th:text="${room.id}"><a href="#">ID</a></td>
-						<td th:text="${room.code}"><a href="#">CODE</a></td>
-						<td th:text="${room.name}"><a href="#">NAME</a></td>
-						<td th:text="${room.description}"><a href="#">DESCRIPTION</a></td>
+						<td th:text="${room.id}"></td>
+						<td th:text="${room.code}"></td>
+						<td th:text="${room.name}"></td>
+						<td th:text="${room.description}"></td>
+						<td><a th:href="@{/rooms/{id}/(id=${room.id})}" class="badge badge-secondary">Edit</a></td>
+						<td><a th:href="@{/delete(id=${room.id})}" class="badge badge-danger">Delete</a></td>
 					</tr>
 				</tbody>
             </table>
+            <a th:href="@{/rooms/new}" class="btn btn-primary">Add New</a>
           </div>
         </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
       </div>
     </div>
  </div>
