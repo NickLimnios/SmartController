@@ -1,3 +1,50 @@
 <div th:fragment="devices">
-<p>This is the devices content</p>
-</div>
+<div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Tables</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Data Table Example</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>RoomName</th>
+                  <th>Name</th>
+                  <th>Information</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>RoomName</th>
+                  <th>Name</th>
+                  <th>Information</th>
+                  <th>Status</th>
+                </tr>
+              </tfoot>
+                <tbody>
+					<tr th:each="device : ${devices}">
+						<td th:text="${device.room.name}"><a href="#">RoomName</a></td>
+						<td th:text="${device.name}"><a href="#">Name</a></td>
+						<td th:text="${device.information}"><a href="#">Information</a></td>
+						<td>
+							<span th:if="${device.isinactive}">inactive</span>
+                        	<span th:unless="${device.isinactive}">active</span>
+                        </td>
+					</tr>
+				</tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+ </div>>v>
