@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-          <a class="nav-link" href="index">
+          <a class="nav-link" th:href="@{/index}">
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Dashboard</span>
           </a>
@@ -21,16 +21,16 @@
           </a>
           <ul class="sidenav-second-level collapse" id="collapseExamplePages">
             <li>
-              <a href="rooms">Rooms Page</a>
+              <a th:href="@{/rooms}">Rooms Page</a>
             </li>
             <li>
-              <a href="devices">Devices Page</a>
+              <a th:href="@{/devices}">Devices Page</a>
             </li>
             <li>
-              <a href="users">Users Page</a>
+              <a th:href="@{/users}">Users Page</a>
             </li>
             <li>
-              <a href="roles">Roles Page</a>
+              <a th:href="@{/roles}">Roles Page</a>
             </li>
           </ul>
         </li>

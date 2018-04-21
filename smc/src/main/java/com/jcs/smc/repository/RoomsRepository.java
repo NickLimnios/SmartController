@@ -8,6 +8,6 @@ import com.jcs.smc.entity.Rooms;
 @Repository("roomsRepository")
 public interface RoomsRepository extends JpaRepository<Rooms, Integer>{
 	List<Rooms> findAll();
-	List<Rooms> findById(int id);
-	List<Rooms> findByCode(String code);
+	Rooms findById(int id);
+	Rooms findByCode(String code);
 }

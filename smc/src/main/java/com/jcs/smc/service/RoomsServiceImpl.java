@@ -20,12 +20,12 @@ public class RoomsServiceImpl implements RoomsService{
 	}
 
 	@Override
-	public List<Rooms> findById(int id) {
+	public Rooms findById(int id) {
 		return roomsRepo.findById(id);
 	}
 
 	@Override
-	public List<Rooms> findByCode(String code) {
+	public Rooms findByCode(String code) {
 		return roomsRepo.findByCode(code);
 	}
 
