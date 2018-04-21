@@ -1,3 +1,53 @@
 <div th:fragment="users">
-<p>This is the users content</p>
-</div>
+<div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Tables</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Data Table Example</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Role</th>
+                  <th>UserName</th>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>Email</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>Id</th>
+                  <th>Role</th>
+                  <th>UserName</th>
+                  <th>FirstName</th>
+                  <th>LastName</th>
+                  <th>Email</th>
+                </tr>
+              </tfoot>
+                <tbody>
+					<tr th:each="user : ${users}">
+						<td th:text="${user.id}"><a href="#">Id</a></td>
+						<td th:text="${user.role.name}"><a href="#">Role</a></td>
+						<td th:text="${user.username}"><a href="#">UserName</a></td>
+						<td th:text="${user.firstname}"><a href="#">FirstName</a></td>
+						<td th:text="${user.lastname}"><a href="#">LastName</a></td>
+						<td th:text="${user.email}"><a href="#">Email</a></td>
+					</tr>
+				</tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>
+ </div>>
