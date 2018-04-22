@@ -29,30 +29,30 @@ public class RoomsController {
 	public String create(Model model)
 	{
 		Rooms room = new Rooms();
-		model.addAttribute("content","single");
-		model.addAttribute("single",room);
+		model.addAttribute("content","singleRooms");
+		model.addAttribute("singleRooms",room);
 		return "layout";
 	}
 	
 	@RequestMapping("/rooms/{id}")
 	public String view(@PathVariable("id") int id, Model model)
 	{
-		model.addAttribute("content","single");
-		model.addAttribute("single",roomsSrv.findById(id));
+		model.addAttribute("content","singleRooms");
+		model.addAttribute("singleRooms",roomsSrv.findById(id));
 		return "layout";
 	}
 	
 	
 	
-	@RequestMapping(value = "/delete", method = RequestMethod.GET)
+	@RequestMapping(value = "/deleteRooms", method = RequestMethod.GET)
 	public String handleDelete(@RequestParam(name="id")int id) {
 	    roomsSrv.delete(id);
 	    return "redirect:/rooms";
 	}
 	
-	@RequestMapping(value="/submit", method = RequestMethod.POST)
-    public String submit(Rooms single) {
-		roomsSrv.save(single);
+	@RequestMapping(value="/submitRooms", method = RequestMethod.POST)
+    public String submit(Rooms singleRooms) {
+		roomsSrv.save(singleRooms);
 	        return "redirect:/rooms";
 	 }
 	

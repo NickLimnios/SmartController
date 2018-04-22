@@ -30,9 +30,12 @@
 					<tr th:each="role : ${roles}">
 						<td th:text="${role.code}"><a href="#">Id</a></td>
 						<td th:text="${role.name}"><a href="#">Role</a></td>
+            <td><a th:href="@{/roles/{id}/(id=${role.id})}" class="badge badge-secondary">Edit</a></td>
+            <td><a th:href="@{/delete(id=${role.id})}" class="badge badge-danger">Delete</a></td>
 					</tr>
 				</tbody>
             </table>
+            <a th:href="@{/roles/new}" class="btn btn-primary">Add New</a>
           </div>
         </div>
       </div>

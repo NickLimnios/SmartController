@@ -1,0 +1,37 @@
+<div th:fragment="singleRooms">
+<div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">SingleRooms Item</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i></i>SingleRooms Item</div>
+        <div class="card-body">
+			<form class="form-group" th:object="${singleRooms}" th:action="@{/submit}" method="post">
+				<div class="form-group">
+				  <label for="id">Id:</label>
+				  <input th:field="*{id}" type="number" class="form-control" id="id">
+				</div>
+	         	<div class="form-group">
+				  <label for="code">Code:</label>
+				  <input th:field="*{code}" type="text" class="form-control" id="code">
+				</div>
+				<div class="form-group">
+				  <label for="name">Name:</label>
+				  <input th:field="*{name}" type="text" class="form-control" id="name">
+				</div>
+				<div class="form-group">
+				  <label for="description">Description:</label>
+				  <input th:field="*{description}" type="text" class="form-control" id="description">
+				</div>
+				 <button  type="submit" class="btn btn-primary">Submit</button>
+        	</form>
+        </div>
+      </div>
+    </div>
+</div>

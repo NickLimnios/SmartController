@@ -35,16 +35,19 @@
                 </tr>
               </tfoot>
                 <tbody>
-					<tr th:each="user : ${users}">
-						<td th:text="${user.id}"><a href="#">Id</a></td>
-						<td th:text="${user.role.name}"><a href="#">Role</a></td>
-						<td th:text="${user.username}"><a href="#">UserName</a></td>
-						<td th:text="${user.firstname}"><a href="#">FirstName</a></td>
-						<td th:text="${user.lastname}"><a href="#">LastName</a></td>
-						<td th:text="${user.email}"><a href="#">Email</a></td>
-					</tr>
-				</tbody>
+        					<tr th:each="user : ${users}">
+        						<td th:text="${user.id}"><a href="#">Id</a></td>
+        						<td th:text="${user.role.name}"><a href="#">Role</a></td>
+        						<td th:text="${user.username}"><a href="#">UserName</a></td>
+        						<td th:text="${user.firstname}"><a href="#">FirstName</a></td>
+        						<td th:text="${user.lastname}"><a href="#">LastName</a></td>
+        						<td th:text="${user.email}"><a href="#">Email</a></td>
+                    <td><a th:href="@{/users/{id}/(id=${user.id})}" class="badge badge-secondary">Edit</a></td>
+                    <td><a th:href="@{/delete(id=${user.id})}" class="badge badge-danger">Delete</a></td>
+        					</tr>
+				        </tbody>
             </table>
+            <a th:href="@{/users/new}" class="btn btn-primary">Add New</a>
           </div>
         </div>
       </div>

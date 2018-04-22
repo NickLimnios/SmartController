@@ -1,18 +1,18 @@
-<div th:fragment="single">
+<div th:fragment="singleRoles">
 <div class="container-fluid">
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Single Item</li>
+        <li class="breadcrumb-item active">SingleRoles Item</li>
       </ol>
       <!-- Example DataTables Card-->
       <div class="card mb-3">
         <div class="card-header">
-          <i></i>Single Item</div>
+          <i></i>SingleRoles Item</div>
         <div class="card-body">
-			<form class="form-group" th:object="${single}" th:action="@{/submit}" method="post">
+			<form class="form-group" method="POST" th:action="@{/submit}" th:object="${singleRoles}">
 				<div class="form-group">
 				  <label for="id">Id:</label>
 				  <input th:field="*{id}" type="number" class="form-control" id="id">
@@ -24,10 +24,6 @@
 				<div class="form-group">
 				  <label for="name">Name:</label>
 				  <input th:field="*{name}" type="text" class="form-control" id="name">
-				</div>
-				<div class="form-group">
-				  <label for="description">Description:</label>
-				  <input th:field="*{description}" type="text" class="form-control" id="description">
 				</div>
 				 <button  type="submit" class="btn btn-primary">Submit</button>
         	</form>
